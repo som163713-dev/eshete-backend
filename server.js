@@ -7,6 +7,8 @@ const { router: authRouter } = require('./routes/auth');
 const projectsRouter = require('./routes/projects');
 const paymentRouter = require('./routes/payment');
 const adminRouter = require('./routes/admin');
+const botsRouter = require('./routes/bots');
+const campaignsRouter = require('./routes/campaigns');
 
 const app = express();
 app.use(cors({ origin: true, credentials: false })); // برای تست محلی از روی فایل هم کار می‌کند
@@ -18,6 +20,8 @@ app.use('/api/auth', authRouter);
 app.use('/api/projects', projectsRouter);
 app.use('/api/payment', paymentRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/bots', botsRouter);
+app.use('/api/campaigns', campaignsRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);
